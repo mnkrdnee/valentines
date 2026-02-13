@@ -173,3 +173,25 @@ section {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+.activities {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.activities span {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(255, 0, 100, 0.1);
+    transition: 0.3s ease;
+}
+
+.activities span:hover {
+    transform: scale(1.05);
+}
+
