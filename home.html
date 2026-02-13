@@ -111,14 +111,30 @@ Loving you makes life worthwhile.
 <script>
 /* Welcome Name */
 const name = localStorage.getItem("herName");
-document.getElementById("welcome").innerText = "Hello " + name + " 💕";
+document.getElementById("welcome").innerText = "Shainuu minii " + name + " 💕";
 
 /* LIVE DAYS COUNTER */
-const startDate = new Date("2024-09-01"); // CHANGE THIS
-const today = new Date();
-const diffTime = today - startDate;
-const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-document.getElementById("days").innerText = diffDays;
+const startDate = new Date("2023-12-27T22:37:42"); // PUT YOUR REAL DATE + TIME
+
+function updateCounter() {
+    const now = new Date();
+    const diff = now - startDate;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("days").innerHTML =
+        days + " days " +
+        hours + " hours " +
+        minutes + " minutes " +
+        seconds + " seconds";
+}
+
+updateCounter();
+setInterval(updateCounter, 1000);
+
 
 /* Romantic Rain */
 const rainContainer = document.querySelector(".rain");
