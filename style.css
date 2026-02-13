@@ -137,14 +137,45 @@ section {
 .album {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 25px;
+    margin-top: 25px;
+    padding: 10px;
 }
 
-.album img {
-    width: 100%;
+.polaroid {
+    background: #fff;
+    padding: 12px 12px 25px 12px;
     border-radius: 15px;
-    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transform: rotate(calc(-3deg + 6deg * var(--rand)));
+    transition: 0.4s ease;
+    position: relative;
 }
+
+.polaroid img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+
+.polaroid p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #c2185b;
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+    .album {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 
 /* POEM */
 .poem p {
