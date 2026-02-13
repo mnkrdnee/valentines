@@ -124,19 +124,20 @@ section {
 
 /* ACTIVITIES */
 .activities {
-    list-style-type: disc;     /* keeps real bullets */
+    list-style-position: inside;  /* forces bullet close to text */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;                 /* space between items */
-    padding-left: 0;           /* remove default UL padding */
-    margin-top: 10px;
+    gap: 20px;                     /* space between items horizontally */
+    padding-left: 0;               /* remove default UL padding */
+    margin: 10px 0;                /* optional spacing around list */
 }
 
 .activities li {
+    margin-left: 0;               /* remove extra spacing for list items */
     font-size: 16px;
-    margin-left: 0.5em;        /* small space after bullet */
 }
+
 
 
 /* ALBUM */
