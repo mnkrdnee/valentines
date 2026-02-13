@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Our Love Story 💕</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="rain"></div>
+
+<div class="container">
+
+    <h1 id="welcome"></h1>
+
+    <section class="stats">
+        <h2>Our Stats 💞</h2>
+        <p>💘 Days Together: <strong>520</strong></p>
+        <p>🌍 Countries Visited: <strong>3</strong></p>
+        <p>🏙 Cities Explored: <strong>12</strong></p>
+    </section>
+
+    <section class="activities">
+        <h2>Our Favorite Activities 💕</h2>
+        <ul>
+            <li>🍳 Cooking together</li>
+            <li>🏐 Playing sports</li>
+            <li>😴 Napping</li>
+            <li>🤗 Cuddling</li>
+            <li>🎬 Watching movies</li>
+        </ul>
+    </section>
+
+    <section class="album">
+        <h2>Our Little Album 📸</h2>
+        <img src="photo1.jpg">
+        <img src="photo2.jpg">
+        <img src="photo3.jpg">
+    </section>
+
+    <section class="poem">
+        <h2>For You 💖</h2>
+        <p>
+        In every sunrise, I see your smile,  
+        In every heartbeat, you stay awhile.  
+        Through every city, through every mile,  
+        Loving you makes life worthwhile.  
+        </p>
+        <h1>I LOVE YOU ❤️</h1>
+    </section>
+
+</div>
+
+<script>
+const name = localStorage.getItem("herName");
+document.getElementById("welcome").innerText = "Hello " + name + " 💕";
+</script>
+
+</body>
+</html>
