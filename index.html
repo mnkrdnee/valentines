@@ -1,21 +1,103 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Valentine Login 💕</title>
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine Login 💕</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Dancing Script', cursive;
+    background: linear-gradient(to bottom, #ffd6e8, #ffc2d1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    color: #880e4f;
+}
+
+.rain {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.love-drop {
+    position: absolute;
+    white-space: nowrap;
+    animation: fall linear infinite;
+    color: rgba(255, 0, 100, 0.25);
+}
+
+.glow {
+    color: #ff4d88;
+    text-shadow: 0 0 8px #ff4d88,
+                 0 0 15px #ff99cc;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(-10vh) rotate(var(--rotate));
+        opacity: 0.9;
+    }
+    to {
+        transform: translateY(110vh) rotate(calc(var(--rotate) + 40deg));
+        opacity: 0.3;
+    }
+}
+
+.login-box {
+    background: rgba(255,255,255,0.9);
+    padding: 30px 20px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 350px;
+    box-shadow: 0 10px 30px rgba(255, 0, 100, 0.2);
+    position: relative;
+    z-index: 2;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 12px;
+    border: 1px solid #ff99bb;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 12px;
+    background: #ff4d6d;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+</style>
 </head>
-<body class="login-body">
+
+<body>
 
 <div class="rain"></div>
 
 <div class="login-box">
     <h1>Welcome My Love 💖</h1>
-    
     <input type="text" id="name" placeholder="Enter your name ❤️">
-    
     <p>Do you love me?</p>
-    
     <button onclick="login(true)">YES 💕</button>
     <button onclick="login(false)">NO 😡</button>
 </div>
@@ -36,6 +118,33 @@ function login(answer){
         alert("Wrong answer 😤 Try again.");
     }
 }
+
+/* Romantic Rain */
+const rainContainer = document.querySelector(".rain");
+
+function createLoveDrop() {
+    const drop = document.createElement("div");
+    drop.classList.add("love-drop");
+
+    const types = ["I love you", "Suvdaa", "❤️"];
+    drop.innerText = types[Math.floor(Math.random() * types.length)];
+
+    drop.style.left = Math.random() * 100 + "vw";
+    const duration = 3 + Math.random() * 6;
+    drop.style.animationDuration = duration + "s";
+    drop.style.fontSize = (14 + Math.random() * 18) + "px";
+
+    const rotate = (Math.random() * 60 - 30);
+    drop.style.setProperty("--rotate", rotate + "deg");
+
+    if (Math.random() < 0.3) drop.classList.add("glow");
+
+    rainContainer.appendChild(drop);
+
+    setTimeout(() => drop.remove(), duration * 1000);
+}
+
+setInterval(createLoveDrop, 180);
 </script>
 
 </body>
