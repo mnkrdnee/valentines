@@ -122,13 +122,12 @@ section {
     margin: 8px 0;
 }
 
-/* ACTIVITIES */
 .activities {
     list-style: none;          /* remove default bullets */
     display: flex;             /* horizontal */
     flex-wrap: wrap;           /* wrap on mobile */
-    justify-content: center;   
-    padding: 0;                /* remove default padding */
+    justify-content: flex-start;  /* LEFT align */
+    padding: 0;                /* remove UL default padding */
     margin: 10px 0;
     gap: 12px;                 /* space between items */
 }
@@ -148,6 +147,7 @@ section {
     font-weight: bold;
     margin-right: 6px;         /* small gap between bullet and text */
 }
+
 
 
 
