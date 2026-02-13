@@ -188,6 +188,10 @@ function createLoveDrop() {
 }
 
 setInterval(createLoveDrop, 180);
+document.querySelectorAll(".polaroid").forEach(card => {
+    card.style.setProperty("--rand", Math.random());
+});
+
 </script>
 
 </body>
