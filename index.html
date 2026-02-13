@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Valentine Login 💕</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+
+<div class="rain"></div>
+
+<div class="login-box">
+    <h1>Welcome My Love 💖</h1>
+    
+    <input type="text" id="name" placeholder="Enter your name ❤️">
+    
+    <p>Do you love me?</p>
+    
+    <button onclick="login(true)">YES 💕</button>
+    <button onclick="login(false)">NO 😡</button>
+</div>
+
+<script>
+function login(answer){
+    const name = document.getElementById("name").value;
+
+    if(name === ""){
+        alert("Enter your name first 💕");
+        return;
+    }
+
+    if(answer){
+        localStorage.setItem("herName", name);
+        window.location.href = "home.html";
+    } else {
+        alert("Wrong answer 😤 Try again.");
+    }
+}
+</script>
+
+</body>
+</html>
